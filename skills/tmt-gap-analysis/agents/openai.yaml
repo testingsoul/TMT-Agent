@@ -1,0 +1,7 @@
+interface:
+  display_name: "TMT Gap Analysis"
+  short_description: "Find STRIDE threats with no verifying test"
+  default_prompt: "Use $tmt-gap-analysis to find which threats in this repo have no test proving the control works."
+
+policy:
+  allow_implicit_invocation: true

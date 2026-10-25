@@ -1,0 +1,7 @@
+interface:
+  display_name: "TMT Write Tests"
+  short_description: "Write the missing security tests"
+  default_prompt: "Use $tmt-write-tests to write tests for the high-risk gaps in tmt-report/gaps.json."
+
+policy:
+  allow_implicit_invocation: true

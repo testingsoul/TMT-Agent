@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/testingsoul/TMT-Agent/templates/gaps.schema.json",
+  "title": "TMT gap analysis result",
+  "type": "object",
+  "required": ["project", "generated", "catalog", "components", "scenarios"],
+  "properties": {
+    "project": { "type": "string" },
+    "generated": { "type": "string", "description": "ISO-8601 date" },
+    "catalog": { "type": "string", "description": "Catalog source and version, e.g. TMT-CheatSheets@eaabf3d" },
+    "threat_model": { "type": ["string", "null"], "description": "Path of the threat model used, if any" },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "name"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "enum": ["web", "api", "database", "other"] },
+          "name": { "type": "string" },
+          "paths": { "type": "array", "items": { "type": "string" } },
+          "exposure": { "enum": ["internet", "internal", "local"] }
+        }
+      }
+    },
+    "scenarios": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "stride", "component", "status", "risk", "rationale"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^([STRIDE]-(WEB|API|DB|OTH)-[A-Z0-9]+|TM-[0-9]+)$" },
+          "stride": { "enum": ["S", "T", "R", "I", "D", "E"] },
+          "title": { "type": "string" },
+          "component": { "type": "string" },
+          "status": { "enum": ["covered", "partial", "missing", "not_applicable"] },
+          "risk": { "enum": ["high", "medium", "low"] },
+          "tests": { "type": "array", "items": { "type": "string" }, "description": "path::test_name of tests that cover it" },
+          "missing_assertions": {
+            "type": "array",
+            "items": { "enum": ["outcome", "no_side_effects", "evidence"] }
+          },
+          "targets": { "type": "array", "items": { "type": "string" }, "description": "Code locations (routes, models, configs) the scenario applies to" },
+          "rationale": { "type": "string" },
+          "hypothesis": { "type": "string", "description": "Given/When/Then for missing or partial scenarios" }
+        }
+      }
+    }
+  }
+}

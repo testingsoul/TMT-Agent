@@ -1,0 +1,24 @@
+{
+  "name": "tmt-agent",
+  "version": "0.1.0",
+  "description": "Threat Modeling Testing agent: understands your code and tests, and finds the STRIDE threats with no test proving the control works.",
+  "author": { "name": "testingsoul" },
+  "homepage": "https://github.com/testingsoul/TMT-Agent",
+  "repository": "https://github.com/testingsoul/TMT-Agent",
+  "keywords": ["security", "threat-modeling", "stride", "testing", "appsec", "tmt"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "TMT Agent",
+    "shortDescription": "Find the security tests your threat model says you need",
+    "longDescription": "Threat Modeling Testing: maps your code and tests, finds STRIDE threats with no test proving the control works, writes the missing tests, and gates CI on high-risk gaps.",
+    "developerName": "testingsoul",
+    "category": "Coding",
+    "capabilities": ["Interactive", "Write"],
+    "defaultPrompt": [
+      "Which security tests am I missing in this repo?",
+      "Check our tests against docs/threat-model.tm7",
+      "Write tests for the high-risk TMT gaps"
+    ],
+    "brandColor": "#B91C1C"
+  }
+}

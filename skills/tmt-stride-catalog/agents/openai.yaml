@@ -1,0 +1,7 @@
+interface:
+  display_name: "TMT STRIDE Catalog"
+  short_description: "STRIDE test scenarios by system type"
+  default_prompt: "Use $tmt-stride-catalog to list the security tests our API should have."
+
+policy:
+  allow_implicit_invocation: true

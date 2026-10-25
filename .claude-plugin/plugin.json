@@ -1,0 +1,9 @@
+{
+  "name": "tmt-agent",
+  "version": "0.1.0",
+  "description": "Threat Modeling Testing agent: understands your code and tests, and finds the STRIDE threats with no test proving the control works.",
+  "author": { "name": "testingsoul" },
+  "homepage": "https://github.com/testingsoul/TMT-Agent",
+  "repository": "https://github.com/testingsoul/TMT-Agent",
+  "keywords": ["security", "threat-modeling", "stride", "testing", "appsec", "tmt"]
+}

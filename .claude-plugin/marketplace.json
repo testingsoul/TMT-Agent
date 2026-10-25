@@ -1,0 +1,11 @@
+{
+  "name": "testingsoul",
+  "owner": { "name": "testingsoul" },
+  "plugins": [
+    {
+      "name": "tmt-agent",
+      "source": "./",
+      "description": "Threat Modeling Testing: find the security tests your threat model says you should have."
+    }
+  ]
+}
